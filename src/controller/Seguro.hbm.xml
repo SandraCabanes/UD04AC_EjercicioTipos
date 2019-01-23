@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="model.Seguro" table="seguro">
+        <id column="idSeguro" name="idSeguro" type="integer">
+            <generator class="increment"/>
+        </id>
+        <component name="nif">
+            <property column="nif" name="nif" type="string" />
+        </component>
+        <property column="nombre" name="nombre" type="string" />
+        <property column="ape1" name="ape1" type="string" />
+        <property column="ape2" name="ape2" type="string" />
+        <property column="edad" name="edad" type="integer" />
+        
+        <property name="sexo" >
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">model.Sexo</param>
+                <param name="type">12</param>
+            </type>
+        </property>
+        
+        <property column="casado" name="casado" type="boolean" />
+        <property column="numHijos" name="numHijos" type="integer" />
+        <property column="embarazada" name="embarazada" type="boolean" />
+        
+        <component name="coberturas">
+            <property column="oftalmologia" name="oftalmologia" type="boolean" />
+            <property column="dental" name="dental" type="boolean" />
+            <property column="fecundacionInVitro" name="fecundacionInVitro" type="boolean" />
+        </component>
+
+        <component name="enfermedades">
+            <property column="corazon" name="corazon" type="boolean" />
+            <property column="estomacal" name="estomacal" type="boolean" />
+            <property column="rinyones" name="rinyones" type="boolean" />
+            <property column="alergia" name="alergia" type="boolean" />
+            <property column="nombreAlergia" name="nombreAlergia" type="string" />
+        </component>
+        <property column="fechaCreacion" name="fechaCreacion" type="timestamp" />
+        
+        <set name="asistenciaMedica" cascade="all" inverse="true">
+            <key>
+                <column name="idSeguro"/>
+            </key>
+            <one-to-many class="model.AsistenciaMedica"/>
+        </set>
+        
+    </class>
+</hibernate-mapping>
