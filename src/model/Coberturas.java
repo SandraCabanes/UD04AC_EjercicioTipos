@@ -49,6 +49,8 @@ public class Coberturas implements Serializable {
         this.fecundacionInVitro = fecundacionInVitro;
     }
 
+    
+
     @Override
     public String toString() {
         return "Coberturas{" + "oftalmologia=" + oftalmologia + ", dental=" + dental + ", fecundacionInVitro=" + fecundacionInVitro + '}';

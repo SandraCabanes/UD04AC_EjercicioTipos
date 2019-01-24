@@ -17,7 +17,7 @@
         <property name="sexo" >
             <type name="org.hibernate.type.EnumType">
                 <param name="enumClass">model.Sexo</param>
-                <param name="type">12</param>
+                <param name="type">4</param>
             </type>
         </property>
         
@@ -40,9 +40,9 @@
         </component>
         <property column="fechaCreacion" name="fechaCreacion" type="timestamp" />
         
-        <set name="asistenciaMedica" cascade="all" inverse="true">
+        <set name="asistenciasMedicas" cascade="all" inverse="true">
             <key>
-                <column name="idSeguro"/>
+                <column name="IdSeguro"/>
             </key>
             <one-to-many class="model.AsistenciaMedica"/>
         </set>
