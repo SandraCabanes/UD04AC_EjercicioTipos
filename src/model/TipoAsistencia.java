@@ -10,8 +10,8 @@ package model;
  * @author Sandra
  */
 public enum TipoAsistencia {
-    HOSPITARLIA,
-    AMBULATORIA,
-    CENTROSALUD,
-    DOMICILIARIA
+    Hospitalaria,
+    Ambulatoria,
+    CentroSalud,
+    Domiciliaria
 }

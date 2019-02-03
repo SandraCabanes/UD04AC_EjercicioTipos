@@ -22,7 +22,12 @@
         <property name="hora" column="hora" type="time" />
         <property name="importe" column="importe"  type="big_decimal" />
 
-
+        
       
     </class>
+    <query name="grandesGastos">
+            <![CDATA[SELECT a FROM AsistenciaMedica a WHERE a.importe > 10000]]>
+        </query>
+        
+        
 </hibernate-mapping>
